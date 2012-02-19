@@ -1,0 +1,2 @@
+module TrimSpacesFor
+end
