@@ -15,7 +15,16 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 3.2.1"
+  %w{ activesupport actionpack railties }.each do |gem|
+    s.add_dependency gem, ['>= 3.0.0']
+  end
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'bundler', ['>= 1.0.0']
+  s.add_development_dependency 'sqlite3', ['>= 0']
+  %w{ activerecord activemodel }.each do |gem|
+    s.add_development_dependency gem, ['>= 3.0.0']
+  end
+  s.add_development_dependency 'rspec', ['>= 0']
+  s.add_development_dependency 'rspec-rails', ['>= 0']
+
 end
