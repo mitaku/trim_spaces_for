@@ -25,7 +25,7 @@ That corresponds to the full-width space.
     > obj = User.new
     > obj.age = "　23" # full-width space
     > obj.save  #=> true
-    > obj.age = "23"
+    > obj.age #=> 23
 
 
 This project rocks and uses MIT-LICENSE.
