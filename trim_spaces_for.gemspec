@@ -7,21 +7,18 @@ require "trim_spaces_for/version"
 Gem::Specification.new do |s|
   s.name        = "trim_spaces_for"
   s.version     = TrimSpacesFor::VERSION
-  s.authors     = ["TakumiMIURA"]
+  s.authors     = ["Takumi Miura"]
   s.email       = ["mitaku1104@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TrimSpacesFor is trimming white space module."
-  s.description = ""
+  s.homepage    = "https://github.com/mitaku/trim_spaces_for"
+  s.summary     = "TrimSpacesFor gem removes leading and trailing white spaces from the AR attribute values."
+  s.description = "TrimSpacesFor gem removes leading and trailing white spaces from the AR attribute values."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency 'rails', ['>= 3.0.0']
+  s.add_dependency 'rails', ['>= 3.1.0']
 
   s.add_development_dependency 'bundler', ['>= 1.0.0']
   s.add_development_dependency 'sqlite3', ['>= 0']
-  %w{ activerecord activemodel }.each do |gem|
-    s.add_development_dependency gem, ['>= 3.0.0']
-  end
   s.add_development_dependency 'rspec', ['>= 0']
   s.add_development_dependency 'rspec-rails', ['>= 0']
   s.add_development_dependency 'spork', ">= 1.0.0.rc"
