@@ -6,12 +6,9 @@ module TrimSpacesFor
 
     module ClassMethods
       def trim_spaces_for(*target_attributes)
-        before_validation do
+        before_validation do |model|
           target_attributes.each do |attribute|
-            value = self.send(attribute)
-            if value.is_a?(String)
-              self.send("#{attribute}=", value.trim)
-            end
+            model[attribute] = model[attribute].trim if model[attribute].respond_to?(:trim)
           end
         end
       end
