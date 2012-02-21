@@ -12,6 +12,7 @@ describe Article do
  BODY-1　 　
 　 BODY-2 　
       EOS
+      @obj.number = "　　　12345 　　 "
       @obj.save!
     end
     subject { @obj }
@@ -25,6 +26,7 @@ BODY-1　 　
 
       should == result.chomp
     end
+    its(:number) { should == 12345 }
   end
 
 end

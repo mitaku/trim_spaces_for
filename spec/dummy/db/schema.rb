@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120221060010) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "number"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
