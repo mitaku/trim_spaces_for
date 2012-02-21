@@ -8,7 +8,7 @@ module TrimSpacesFor
       def trim_spaces_for(*target_attributes)
         before_validation do |model|
           target_attributes.each do |attribute|
-            model[attribute] = model[attribute].trim if model[attribute].respond_to?(:trim)
+            model[attribute] = model[attribute].trim_white_spaces if model[attribute].respond_to?(:trim_white_spaces)
           end
         end
       end
