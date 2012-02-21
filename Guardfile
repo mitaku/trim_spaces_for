@@ -12,7 +12,7 @@ guard 'spork', :wait => 30, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_e
   # watch(%r{features/support/}) { :cucumber }
 end
 
-guard 'rspec', :version => 2, :all_after_pass => false, :all_on_start => false, :spec_paths => Dir["{spec,./spec,vendor/plugins/biz_*/spec}"], :cli => "--drb --color -fd -o doc/spec.txt" do
+guard 'rspec', :version => 2, :all_after_pass => false, :all_on_start => false, :spec_paths => Dir["spec"], :cli => "--drb --color -fd -o doc/spec.txt" do
   watch('config/routes.rb')                          { Dir["./spec/routing"] }
   watch('app/controllers/application_controller.rb') { Dir["./spec/controllers/**/*_spec.rb"] }
 
