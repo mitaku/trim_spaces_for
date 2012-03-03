@@ -10,7 +10,7 @@ module TrimSpacesFor
           target_attributes.each do |attribute|
             before_cast = model.__send__("#{attribute}_before_type_cast")
             if before_cast.respond_to?(:trim_white_spaces)
-              model[attribute] = before_cast.trim_white_spaces
+              model.__send__("#{attribute}=", before_cast.trim_white_spaces)
             end
           end
         end
